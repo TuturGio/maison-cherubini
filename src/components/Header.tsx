@@ -41,7 +41,7 @@ export default function Header({ activeCategory, setActiveCategory, categories }
           <div className="flex items-center space-x-3">
             <Scissors className="w-8 h-8 text-amber-700" />
             <div>
-              <h1 className="text-2xl font-serif font-bold text-stone-800">Atelier Couture</h1>
+              <h1 className="text-2xl font-serif font-bold text-stone-800">Maison Cherubini</h1>
               <p className="text-xs text-stone-600">Décoration sur mesure</p>
             </div>
           </div>
