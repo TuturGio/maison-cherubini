@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         italiana: ['Italiana', 'serif'],
+        pinyon: ['Pinyon Script', 'cursive'],
         roboto: ['Roboto', 'sans-serif'],
       },
     },

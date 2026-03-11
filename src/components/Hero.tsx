@@ -20,10 +20,25 @@ export default function Hero() {
           <h2 className="text-5xl font-italiana font-bold text-stone-800 mb-6 leading-tight">
             Décoration Textile sur Mesure
           </h2>
-          <p className="text-xl text-stone-700 mb-8 leading-relaxed">
-            Découvrez notre collection de rideaux, voilages, stores et articles de décoration
-            confectionnés avec soin et expertise. Un savoir-faire artisanal au service de votre intérieur.
-          </p>
+          <div className="text-2xl font-pinyon text-stone-700 mb-8 leading-relaxed">
+            <p className="mb-4">
+              <em>"Il y a des marques qui naissent d'une idée. La nôtre naît d'une rencontre.</em>
+            </p>
+
+            <p className="mb-4">
+              <em>deux femmes,<br />
+              deux énergies,<br />
+              deux sensibilités,</em>
+            </p>
+
+            <p className="mb-4">
+              <em>Une même exigence.</em>
+            </p>
+
+            <p>
+              <em>Nous ne sommes pas identiques. Et c'est précisément là que tout commence."</em>
+            </p>
+          </div>
 
           <div className="flex flex-wrap gap-4">
             <button
