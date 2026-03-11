@@ -10,7 +10,7 @@ export default function Hero() {
 };
 
   return (
-    <div className="relative h-[500px] bg-gradient-to-br from-amber-50 to-stone-100 overflow-hidden">
+    <div className="relative min-h-[500px] md:h-[500px] bg-gradient-to-br from-amber-50 to-stone-100 overflow-hidden pb-8 md:pb-0">
       <div
         className="absolute inset-0 opacity-10"
         style={{
@@ -20,7 +20,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative container mx-auto px-4 h-full flex items-center pt-16 md:pt-0">
+      <div className="relative container mx-auto px-4 h-full flex items-center pt-20 md:pt-0">
         <div className="max-w-2xl">
           <h2 className="text-4xl md:text-5xl font-italiana font-bold text-stone-800 mb-6 leading-tight">
             Textile sur Mesure
