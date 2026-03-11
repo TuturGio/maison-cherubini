@@ -35,14 +35,12 @@ function Home() {
   );
 }
 
-// C'est cette fonction et l'export en dessous qui sont essentiels
 export default function App() {
   return (
-    <BrowserRouter basename="/maison-cherubini">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        {/* Sécurité pour rediriger les erreurs vers l'accueil */}
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
