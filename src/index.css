@@ -12,7 +12,11 @@
   }
 }
 
+.force-playwrite p {
+  font-family: 'Playwrite NL', cursive !important;
+  font-style: normal !important; /* Parfois le navigateur force l'italique sur Roboto */
+}
+
 .force-playwrite {
-  font-family: "Playwrite NL", "Playwrite", cursive !important;
-  font-weight: 400 !important;
+  font-family: 'Playwrite NL', cursive !important;
 }
