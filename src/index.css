@@ -13,5 +13,6 @@
 }
 
 .force-playwrite {
-  font-family: "Playwrite NL", cursive !important;
+  font-family: "Playwrite NL", "Playwrite", cursive !important;
+  font-weight: 400 !important;
 }
