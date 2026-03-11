@@ -26,7 +26,7 @@ export default function Hero() {
             Décoration Textile sur Mesure
           </h2>
           
-          <div className="text-md text-stone-700 mb-8 leading-relaxed force-playwrite">
+          <div className="text-md text-stone-700 mb-8 leading-relaxed force-playwrite bg-white/60 backdrop-blur-sm p-6 rounded-lg">
           <p className="mb-4">
               "Il y a des marques qui naissent d'une idée. La nôtre naît d'une rencontre.
             </p>
