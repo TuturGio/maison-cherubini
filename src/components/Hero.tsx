@@ -20,7 +20,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative container mx-auto px-4 h-full flex items-center">
+      <div className="relative container mx-auto px-4 h-full flex items-center pt-16 md:pt-0">
         <div className="max-w-2xl">
           <h2 className="text-4xl md:text-5xl font-italiana font-bold text-stone-800 mb-6 leading-tight">
             Textile sur Mesure
@@ -46,20 +46,20 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex gap-2 sm:gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center gap-2 bg-amber-700 text-white px-6 py-3 rounded-lg hover:bg-amber-800 transition-colors"
+              className="inline-flex items-center gap-1 sm:gap-2 bg-amber-700 text-white px-4 sm:px-6 py-3 rounded-lg hover:bg-amber-800 transition-colors text-sm sm:text-base"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="font-medium">Nous contacter</span>
             </button>
             <a
               href="mailto:contact@atelier-couture.fr"
-              className="inline-flex items-center gap-2 bg-white text-stone-800 px-6 py-3 rounded-lg hover:bg-stone-100 transition-colors border border-stone-300"
+              className="inline-flex items-center gap-1 sm:gap-2 bg-white text-stone-800 px-4 sm:px-6 py-3 rounded-lg hover:bg-stone-100 transition-colors border border-stone-300 text-sm sm:text-base"
             >
-              <Mail className="w-5 h-5" />
-              <span className="font-medium">Demander un devis</span>
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="font-medium whitespace-nowrap">Demander un devis</span>
             </a>
           </div>
         </div>
