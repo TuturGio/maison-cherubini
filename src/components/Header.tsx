@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Menu, X, Scissors } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X, Scissors, ChevronDown } from 'lucide-react';
 
 interface Category {
   id: string;
@@ -11,16 +11,33 @@ interface Category {
 }
 
 interface HeaderProps {
-  activeCategory: string;
-  setActiveCategory: (id: string) => void;
-  categories: Category[];
+  activeCategory?: string;
+  setActiveCategory?: (id: string) => void;
+  categories?: Category[];
 }
 
-export default function Header({ activeCategory, setActiveCategory, categories }: HeaderProps) {
+export default function Header({ activeCategory, setActiveCategory, categories = [] }: HeaderProps) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
 
   const scrollToCategory = (categoryId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        scrollToCategoryOnPage(categoryId);
+      }, 100);
+    } else {
+      scrollToCategoryOnPage(categoryId);
+    }
+    setMobileMenuOpen(false);
+    setSubmenuOpen(false);
+    setMobileSubmenuOpen(false);
+  };
+
+  const scrollToCategoryOnPage = (categoryId: string) => {
     if (categoryId === 'all') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
@@ -32,15 +49,19 @@ export default function Header({ activeCategory, setActiveCategory, categories }
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       }
     }
-    setActiveCategory(categoryId);
-    setMobileMenuOpen(false);
+    if (setActiveCategory) {
+      setActiveCategory(categoryId);
+    }
   };
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="hidden md:flex flex-col items-center py-6">
-          <div className="flex items-center space-x-3 mb-6">
+          <div
+            className="flex items-center space-x-3 mb-6 cursor-pointer"
+            onClick={() => navigate('/')}
+          >
             <Scissors className="w-8 h-8 text-amber-700" />
             <div>
               <h1 className="text-2xl font-italiana font-bold text-stone-800">Maison Cherubini</h1>
@@ -50,17 +71,64 @@ export default function Header({ activeCategory, setActiveCategory, categories }
 
           <div className="relative w-full flex justify-center">
             <nav className="flex items-center space-x-8">
-              {categories.map((category) => (
+              <div
+                className="relative"
+                onMouseEnter={() => setSubmenuOpen(true)}
+                onMouseLeave={() => setSubmenuOpen(false)}
+              >
                 <button
-                  key={category.id}
-                  onClick={() => scrollToCategory(category.id)}
-                  className={`text-sm font-medium transition-colors hover:text-amber-700 ${
-                    activeCategory === category.id ? 'text-amber-700' : 'text-stone-700'
+                  onClick={() => navigate('/')}
+                  className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-amber-700 ${
+                    location.pathname === '/' ? 'text-amber-700' : 'text-stone-700'
                   }`}
                 >
-                  {category.name}
+                  <span>Nos réalisations</span>
+                  <ChevronDown className="w-4 h-4" />
                 </button>
-              ))}
+
+                {submenuOpen && (
+                  <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[200px] border border-stone-100">
+                    {categories.map((category) => (
+                      <button
+                        key={category.id}
+                        onClick={() => scrollToCategory(category.id)}
+                        className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 hover:text-amber-700 ${
+                          activeCategory === category.id ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
+                        }`}
+                      >
+                        {category.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <button
+                onClick={() => navigate('/notre-histoire')}
+                className={`text-sm font-medium transition-colors hover:text-amber-700 ${
+                  location.pathname === '/notre-histoire' ? 'text-amber-700' : 'text-stone-700'
+                }`}
+              >
+                Notre histoire
+              </button>
+
+              <button
+                onClick={() => navigate('/notre-showroom')}
+                className={`text-sm font-medium transition-colors hover:text-amber-700 ${
+                  location.pathname === '/notre-showroom' ? 'text-amber-700' : 'text-stone-700'
+                }`}
+              >
+                Notre showroom
+              </button>
+
+              <button
+                onClick={() => navigate('/contact')}
+                className={`text-sm font-medium transition-colors hover:text-amber-700 ${
+                  location.pathname === '/contact' ? 'text-amber-700' : 'text-stone-700'
+                }`}
+              >
+                Contact
+              </button>
             </nav>
 
             <div className="absolute right-0 top-1/2 -translate-y-1/2">
@@ -75,7 +143,13 @@ export default function Header({ activeCategory, setActiveCategory, categories }
         </div>
 
         <div className="md:hidden flex items-center justify-between h-20">
-          <div className="flex items-center space-x-3">
+          <div
+            className="flex items-center space-x-3 cursor-pointer"
+            onClick={() => {
+              navigate('/');
+              setMobileMenuOpen(false);
+            }}
+          >
             <Scissors className="w-8 h-8 text-amber-700" />
             <div>
               <h1 className="text-2xl font-italiana font-bold text-stone-800">Maison Cherubini</h1>
@@ -93,17 +167,68 @@ export default function Header({ activeCategory, setActiveCategory, categories }
 
         {mobileMenuOpen && (
           <nav className="md:hidden pb-4 space-y-2">
-            {categories.map((category) => (
+            <div>
               <button
-                key={category.id}
-                onClick={() => scrollToCategory(category.id)}
-                className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
-                  activeCategory === category.id ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
-                }`}
+                onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
+                className="flex items-center justify-between w-full text-left px-4 py-2 text-sm font-medium text-stone-700 hover:bg-amber-50 rounded"
               >
-                {category.name}
+                <span>Nos réalisations</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileSubmenuOpen ? 'rotate-180' : ''}`} />
               </button>
-            ))}
+
+              {mobileSubmenuOpen && (
+                <div className="pl-4 mt-1 space-y-1">
+                  {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => scrollToCategory(category.id)}
+                      className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
+                        activeCategory === category.id ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
+                      }`}
+                    >
+                      {category.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <button
+              onClick={() => {
+                navigate('/notre-histoire');
+                setMobileMenuOpen(false);
+              }}
+              className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
+                location.pathname === '/notre-histoire' ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
+              }`}
+            >
+              Notre histoire
+            </button>
+
+            <button
+              onClick={() => {
+                navigate('/notre-showroom');
+                setMobileMenuOpen(false);
+              }}
+              className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
+                location.pathname === '/notre-showroom' ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
+              }`}
+            >
+              Notre showroom
+            </button>
+
+            <button
+              onClick={() => {
+                navigate('/contact');
+                setMobileMenuOpen(false);
+              }}
+              className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
+                location.pathname === '/contact' ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
+              }`}
+            >
+              Contact
+            </button>
+
             <button
               onClick={() => {
                 navigate('/contact');
