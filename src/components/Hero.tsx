@@ -21,8 +21,8 @@ export default function Hero() {
             Décoration Textile sur Mesure
           </h2>
           <div
-            className="text-3xl text-stone-700 mb-8 leading-relaxed"
-            style={{ fontFamily: "'Pinyon Script', cursive", fontWeight: 400 }}
+            className="text-4xl text-stone-700 mb-8 leading-relaxed"
+            style={{ fontFamily: "'Great Vibes', cursive", fontWeight: 400 }}
           >
             <p className="mb-4">
               "Il y a des marques qui naissent d'une idée. La nôtre naît d'une rencontre.
