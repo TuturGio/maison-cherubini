@@ -35,15 +35,15 @@ function Home() {
   );
 }
 
-function App() {
-  // Remplace 'NOM-DE-TON-REPO' par le nom exact de ton projet sur GitHub
+// C'est cette fonction et l'export en dessous qui sont essentiels
+export default function App() {
   return (
     <BrowserRouter basename="/maison-cherubini">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        {/* Cette route capture les erreurs et renvoie à l'accueil si besoin */}
-        <Route path="*" element={<Home />} /> 
+        {/* Sécurité pour rediriger les erreurs vers l'accueil */}
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
