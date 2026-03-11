@@ -20,7 +20,10 @@ export default function Hero() {
           <h2 className="text-5xl font-italiana font-bold text-stone-800 mb-6 leading-tight">
             Décoration Textile sur Mesure
           </h2>
-          <div className="text-2xl font-pinyon text-stone-700 mb-8 leading-relaxed">
+          <div
+            className="text-2xl text-stone-700 mb-8 leading-relaxed"
+            style={{ fontFamily: "'Pinyon Script', cursive" }}
+          >
             <p className="mb-4">
               <em>"Il y a des marques qui naissent d'une idée. La nôtre naît d'une rencontre.</em>
             </p>
