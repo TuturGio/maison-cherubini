@@ -4,11 +4,9 @@ import { useNavigate } from 'react-router-dom';
 export default function Hero() {
   const navigate = useNavigate();
 
-  // On définit le style de la police ici pour plus de clarté
   const handwrittenStyle = { 
-  // On ajoute !important pour écraser Roboto ou toute autre police imposée
-  fontFamily: '"Playwrite NL", cursive !important', 
-  lineHeight: '1.8' 
+  fontFamily: "'Playwrite NL', cursive",
+  lineHeight: '1.8'
 };
 
   return (
@@ -28,8 +26,7 @@ export default function Hero() {
             Décoration Textile sur Mesure
           </h2>
           
-          {/* On applique le style directement sur le conteneur du texte */}
-          <div className="text-xl text-stone-700 mb-8 leading-relaxed" style={handwrittenStyle}>
+          <div className="text-xl text-stone-700 mb-8 leading-relaxed force-playwrite" style={handwrittenStyle}>
             <p className="mb-4">
               "Il y a des marques qui naissent d'une idée. La nôtre naît d'une rencontre.
             </p>
