@@ -42,7 +42,7 @@ export default function NotreHistoire() {
               Très vite, une évidence : une vision commune, des valeurs partagées et une complémentarité naturelle. De rendez-vous en rendez-vous, notre idée a pris forme. Moi, passionnée de matières, de couture et de création. Chloé, animée par la décoration et dotée de solides compétences en développement d'entreprise.
             </p>
 
-            <p className="text-stone-700 leading-relaxed font-medium">
+            <p className="text-amber-700 leading-relaxed font-medium">
               La question s'est imposée :<br />
               Et si on créait quelque chose ensemble ?
             </p>
