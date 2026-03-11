@@ -21,25 +21,25 @@ export default function Hero() {
             Décoration Textile sur Mesure
           </h2>
           <div
-            className="text-2xl text-stone-700 mb-8 leading-relaxed"
-            style={{ fontFamily: "'Pinyon Script', cursive" }}
+            className="text-3xl text-stone-700 mb-8 leading-relaxed"
+            style={{ fontFamily: "'Pinyon Script', cursive", fontWeight: 400 }}
           >
             <p className="mb-4">
-              <em>"Il y a des marques qui naissent d'une idée. La nôtre naît d'une rencontre.</em>
+              "Il y a des marques qui naissent d'une idée. La nôtre naît d'une rencontre.
             </p>
 
             <p className="mb-4">
-              <em>deux femmes,<br />
+              deux femmes,<br />
               deux énergies,<br />
-              deux sensibilités,</em>
+              deux sensibilités,
             </p>
 
             <p className="mb-4">
-              <em>Une même exigence.</em>
+              Une même exigence.
             </p>
 
             <p>
-              <em>Nous ne sommes pas identiques. Et c'est précisément là que tout commence."</em>
+              Nous ne sommes pas identiques. Et c'est précisément là que tout commence."
             </p>
           </div>
 
