@@ -6,9 +6,10 @@ export default function Hero() {
 
   // On définit le style de la police ici pour plus de clarté
   const handwrittenStyle = { 
-    fontFamily: '"Playwrite NL", cursive',
-    lineHeight: '1.8' 
-  };
+  // On ajoute !important pour écraser Roboto ou toute autre police imposée
+  fontFamily: '"Playwrite NL", cursive !important', 
+  lineHeight: '1.8' 
+};
 
   return (
     <div className="relative h-[500px] bg-gradient-to-br from-amber-50 to-stone-100 overflow-hidden">
