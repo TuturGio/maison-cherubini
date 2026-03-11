@@ -4,6 +4,12 @@ import { useNavigate } from 'react-router-dom';
 export default function Hero() {
   const navigate = useNavigate();
 
+  // On définit le style de la police ici pour plus de clarté
+  const handwrittenStyle = { 
+    fontFamily: '"Playwrite NL", cursive',
+    lineHeight: '1.8' 
+  };
+
   return (
     <div className="relative h-[500px] bg-gradient-to-br from-amber-50 to-stone-100 overflow-hidden">
       <div
@@ -20,7 +26,9 @@ export default function Hero() {
           <h2 className="text-5xl font-italiana font-bold text-stone-800 mb-6 leading-tight">
             Décoration Textile sur Mesure
           </h2>
-          <div className="text-xl text-stone-700 mb-8 leading-relaxed font-playwrite">
+          
+          {/* On applique le style directement sur le conteneur du texte */}
+          <div className="text-xl text-stone-700 mb-8 leading-relaxed" style={handwrittenStyle}>
             <p className="mb-4">
               "Il y a des marques qui naissent d'une idée. La nôtre naît d'une rencontre.
             </p>
