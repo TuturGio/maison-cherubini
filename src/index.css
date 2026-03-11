@@ -7,17 +7,7 @@
     @apply font-italiana;
   }
 
-  body, p, span, div {
+  body, p, span, div, button, a, li {
     @apply font-roboto;
-  }
-}
-
-@layer utilities {
-  .font-italiana {
-    font-family: 'Italiana', serif;
-  }
-
-  .font-roboto {
-    font-family: 'Roboto', sans-serif;
   }
 }
