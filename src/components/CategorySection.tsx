@@ -14,7 +14,7 @@ export default function CategorySection({ category }: CategorySectionProps) {
   return (
     <section id={category.id} className="mb-24 scroll-mt-24">
       <div className="max-w-4xl mb-12">
-        <h3 className="text-4xl font-serif font-bold text-stone-800 mb-4">
+        <h3 className="text-4xl font-italiana font-bold text-stone-800 mb-4">
           {category.title}
         </h3>
         <p className="text-lg text-stone-600 leading-relaxed">

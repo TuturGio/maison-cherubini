@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <Scissors className="w-6 h-6 text-amber-500" />
-              <h3 className="text-xl font-serif font-bold text-white">Atelier Couture</h3>
+              <h3 className="text-xl font-italiana font-bold text-white">Atelier Couture</h3>
             </div>
             <p className="text-stone-400 leading-relaxed">
               Spécialiste de la décoration textile sur mesure depuis plus de 20 ans.
