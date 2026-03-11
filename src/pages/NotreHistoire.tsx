@@ -16,39 +16,56 @@ export default function NotreHistoire() {
             Notre Histoire
           </h1>
 
-          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12 space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-italiana font-bold text-amber-700">
-                Une passion familiale depuis des générations
-              </h2>
-              <p className="text-stone-700 leading-relaxed">
-                Maison Cherubini est née d'une passion transmise de génération en génération pour l'art de la décoration textile. Fondée il y a plusieurs décennies, notre entreprise familiale a su préserver le savoir-faire artisanal tout en s'adaptant aux tendances contemporaines.
-              </p>
-            </div>
+          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12 space-y-6">
+            <p className="text-stone-700 leading-relaxed">
+              Tout a commencé à Marseille, là où j'ai grandi.
+            </p>
 
-            <div className="space-y-4">
-              <h2 className="text-2xl font-italiana font-bold text-amber-700">
-                L'excellence artisanale
-              </h2>
-              <p className="text-stone-700 leading-relaxed">
-                Chaque pièce que nous créons est le fruit d'un travail minutieux et d'une attention particulière portée aux détails. Nos artisans, formés aux techniques traditionnelles, travaillent avec les plus beaux tissus pour donner vie à vos projets de décoration.
-              </p>
-              <p className="text-stone-700 leading-relaxed">
-                De la confection de rideaux sur mesure à la création de banquettes élégantes, en passant par nos réalisations pour le secteur du yachting, nous mettons notre expertise au service de votre confort et de votre bien-être.
-              </p>
-            </div>
+            <p className="text-stone-700 leading-relaxed">
+              Depuis toujours, je suis attirée par les matières, les textures, les détails qui font la différence. Passionnée de couture et de création textile depuis l'enfance, j'ai décidé de quitter ma ville pour me former à Paris à la confection de lingerie et de maillots de bain.
+            </p>
 
-            <div className="space-y-4">
-              <h2 className="text-2xl font-italiana font-bold text-amber-700">
-                Notre engagement
-              </h2>
-              <p className="text-stone-700 leading-relaxed">
-                Chez Maison Cherubini, nous croyons que chaque intérieur mérite une décoration unique qui reflète la personnalité de ses occupants. C'est pourquoi nous accompagnons nos clients à chaque étape de leur projet, du choix des tissus à la pose finale, en garantissant un résultat à la hauteur de leurs attentes.
-              </p>
-              <p className="text-stone-700 leading-relaxed">
-                Notre showroom vous accueille pour découvrir notre collection de tissus et échantillons, et pour échanger avec notre équipe sur vos projets de décoration.
-              </p>
-            </div>
+            <p className="text-stone-700 leading-relaxed">
+              Pendant 4 ans, j'ai travaillé chez Pain de Sucre, puis 3 ans chez Noo en tant que prototypiste. Ces expériences m'ont permis d'acquérir une exigence du détail, la maîtrise des matières et le goût du travail sur mesure.
+            </p>
+
+            <p className="text-stone-700 leading-relaxed">
+              Mais au fond de moi, l'envie d'entreprendre ne m'a jamais quittée.
+            </p>
+
+            <p className="text-stone-700 leading-relaxed">
+              Je crois que j'attendais la bonne rencontre pour me lancer.<br />
+              Et puis il y a eu Chloé.
+            </p>
+
+            <p className="text-stone-700 leading-relaxed">
+              Très vite, une évidence : une vision commune, des valeurs partagées et une complémentarité naturelle. De rendez-vous en rendez-vous, notre idée a pris forme. Moi, passionnée de matières, de couture et de création. Chloé, animée par la décoration et dotée de solides compétences en développement d'entreprise.
+            </p>
+
+            <p className="text-stone-700 leading-relaxed font-medium">
+              La question s'est imposée :<br />
+              Et si on créait quelque chose ensemble ?
+            </p>
+
+            <p className="text-stone-700 leading-relaxed">
+              L'opportunité d'un local a été le déclic. Nous avons quitté nos emplois respectifs, et l'aventure a commencé.
+            </p>
+
+            <p className="text-stone-700 leading-relaxed">
+              Aujourd'hui, à travers notre entreprise de décoration sur mesure, nous proposons bien plus qu'un produit : Nous offrons un accompagnement de A à Z.
+            </p>
+
+            <p className="text-stone-700 leading-relaxed">
+              Notre ambition est de faire naître un projet, de l'idée à la réalisation, en créant des espaces qui racontent une histoire — Celle de nos clients.
+            </p>
+
+            <p className="text-stone-700 leading-relaxed">
+              Passionnées par les matières, les couleurs et les textures, nous avons également développé une collection de coussins, matelas et pièces textiles, entièrement personnalisables et réalisables sur mesure.
+            </p>
+
+            <p className="text-stone-700 leading-relaxed font-medium">
+              Chaque projet est unique. Et c'est cette singularité que nous voulons faire vivre.
+            </p>
 
             <div className="pt-8 flex justify-center">
               <button
