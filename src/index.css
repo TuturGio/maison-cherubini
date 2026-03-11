@@ -11,3 +11,7 @@
     @apply font-roboto;
   }
 }
+
+.force-playwrite {
+  font-family: "Playwrite NL", cursive !important;
+}
