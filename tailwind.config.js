@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         italiana: ['Italiana', 'serif'],
-        pinyon: ['Pinyon Script', 'cursive'],
+        dancing: ['Dancing Script', 'cursive'],
         roboto: ['Roboto', 'sans-serif'],
       },
     },
