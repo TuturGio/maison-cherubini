@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CategorySection from './components/CategorySection';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import Contact from './pages/Contact';
 import { categories } from './data/categories';
 
-function App() {
+function Home() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   return (
@@ -30,6 +32,17 @@ function App() {
       <Footer />
       <ScrollToTop />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

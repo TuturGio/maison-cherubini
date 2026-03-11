@@ -1,6 +1,9 @@
 import { Phone, Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <div className="relative h-[500px] bg-gradient-to-br from-amber-50 to-stone-100 overflow-hidden">
       <div
@@ -23,13 +26,13 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a
-              href="tel:+33123456789"
+            <button
+              onClick={() => navigate('/contact')}
               className="inline-flex items-center gap-2 bg-amber-700 text-white px-6 py-3 rounded-lg hover:bg-amber-800 transition-colors"
             >
               <Phone className="w-5 h-5" />
               <span className="font-medium">Nous contacter</span>
-            </a>
+            </button>
             <a
               href="mailto:contact@atelier-couture.fr"
               className="inline-flex items-center gap-2 bg-white text-stone-800 px-6 py-3 rounded-lg hover:bg-stone-100 transition-colors border border-stone-300"

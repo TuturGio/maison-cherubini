@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X, Scissors } from 'lucide-react';
 
 interface Category {
@@ -16,6 +17,7 @@ interface HeaderProps {
 }
 
 export default function Header({ activeCategory, setActiveCategory, categories }: HeaderProps) {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToCategory = (categoryId: string) => {
@@ -61,7 +63,10 @@ export default function Header({ activeCategory, setActiveCategory, categories }
           </nav>
 
           <div className="hidden md:flex items-center ml-4">
-            <button className="px-4 py-1.5 bg-amber-700 text-white rounded-lg text-sm font-medium hover:bg-amber-800 transition-colors whitespace-nowrap">
+            <button
+              onClick={() => navigate('/contact')}
+              className="px-4 py-1.5 bg-amber-700 text-white rounded-lg text-sm font-medium hover:bg-amber-800 transition-colors whitespace-nowrap"
+            >
               Prendre rendez-vous
             </button>
           </div>
@@ -87,7 +92,13 @@ export default function Header({ activeCategory, setActiveCategory, categories }
                 {category.name}
               </button>
             ))}
-            <button className="block w-full px-4 py-2 mt-4 bg-amber-700 text-white rounded-lg font-medium hover:bg-amber-800 transition-colors">
+            <button
+              onClick={() => {
+                navigate('/contact');
+                setMobileMenuOpen(false);
+              }}
+              className="block w-full px-4 py-2 mt-4 bg-amber-700 text-white rounded-lg font-medium hover:bg-amber-800 transition-colors"
+            >
               Prendre rendez-vous
             </button>
           </nav>
