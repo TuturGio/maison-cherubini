@@ -67,7 +67,7 @@ export default function NotreHistoire() {
               Chaque projet est unique. Et c'est cette singularité que nous voulons faire vivre.
             </p>
 
-            <div className="pt-12 space-y-6">
+            <div className="pt-8 space-y-6">
               <h2 className="text-2xl font-italiana font-bold text-amber-700">
                 Pourquoi la : Décoration / Vision / Douceur / Sud / réversible :
               </h2>
@@ -104,7 +104,7 @@ export default function NotreHistoire() {
                 Ni semblables.
               </p>
 
-              <p className="text-stone-700 leading-relaxed font-medium">
+              <p className="text-amber-700 leading-relaxed font-medium">
                 Complémentaires.
               </p>
 
@@ -166,7 +166,7 @@ export default function NotreHistoire() {
                 Nous sommes deux.
               </p>
 
-              <p className="text-stone-700 leading-relaxed font-medium">
+              <p className="text-amber-700 leading-relaxed font-medium">
                 Et c'est précisément ce qui fait notre unité.
               </p>
             </div>
