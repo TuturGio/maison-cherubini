@@ -67,6 +67,110 @@ export default function NotreHistoire() {
               Chaque projet est unique. Et c'est cette singularité que nous voulons faire vivre.
             </p>
 
+            <div className="pt-12 space-y-6">
+              <h2 className="text-2xl font-italiana font-bold text-amber-700">
+                Pourquoi la : Décoration / Vision / Douceur / Sud / réversible :
+              </h2>
+
+              <p className="text-stone-700 leading-relaxed">
+                Il y a des marques qui naissent d'une idée.<br />
+                La nôtre naît d'une rencontre.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Deux femmes.<br />
+                Deux énergies.<br />
+                Deux sensibilités.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Une même exigence.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Nous ne sommes pas identiques.<br />
+                Et c'est précisément là que tout commence.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Il y a la main et la vision.<br />
+                Le geste et l'intuition.<br />
+                La matière et la structure.<br />
+                Le savoir-faire et l'élan.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Ni opposées.<br />
+                Ni semblables.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed font-medium">
+                Complémentaires.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Entre rigueur et instinct.<br />
+                Entre douceur et caractère.<br />
+                Entre artisanat et modernité.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Nous croyons à la beauté des contrastes.<br />
+                À la richesse des tensions maîtrisées.<br />
+                À l'élégance née de l'équilibre.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Le chiffre deux n'est pas un détail.<br />
+                Il est notre fondation.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Créer à deux, c'est refuser la ligne droite.<br />
+                C'est préférer la nuance.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Deux matières qui se rencontrent.<br />
+                La densité d'un lin, la transparence d'un voile.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Deux usages dans une même pièce :<br />
+                préserver et révéler.<br />
+                Structurer et adoucir.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Nous aimons les objets qui ont deux vies.<br />
+                Les matières qui révèlent deux visages.<br />
+                Les espaces qui offrent deux rythmes :<br />
+                repli et ouverture.<br />
+                ombre et lumière.<br />
+                usage et émotion.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Créer à deux, c'est chercher la tension juste.<br />
+                C'est refuser l'unique version.<br />
+                C'est croire qu'il existe toujours une seconde lecture.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Notre signature est là.<br />
+                Dans cette dualité assumée.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed">
+                Nous ne sommes pas une.<br />
+                Nous sommes deux.
+              </p>
+
+              <p className="text-stone-700 leading-relaxed font-medium">
+                Et c'est précisément ce qui fait notre unité.
+              </p>
+            </div>
+
             <div className="pt-8 flex justify-center">
               <button
                 onClick={() => navigate('/contact')}
