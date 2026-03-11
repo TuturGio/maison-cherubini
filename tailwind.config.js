@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         italiana: ['Italiana', 'serif'],
-        dancing: ['Dancing Script', 'cursive'],
+        playwrite: ['Playwrite NL', 'cursive'],
         roboto: ['Roboto', 'sans-serif'],
       },
     },
