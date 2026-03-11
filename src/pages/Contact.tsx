@@ -223,7 +223,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="relative rounded-xl overflow-hidden shadow-lg h-96 lg:h-full min-h-96">
+            <div className="relative rounded-xl overflow-hidden shadow-lg h-96">
               <img
                 src="https://images.pexels.com/photos/3587620/pexels-photo-3587620.jpeg"
                 alt="Atelier couture"
