@@ -22,8 +22,8 @@ export default function Hero() {
 
       <div className="relative container mx-auto px-4 h-full flex items-center">
         <div className="max-w-2xl">
-          <h2 className="text-5xl font-italiana font-bold text-stone-800 mb-6 leading-tight">
-            Décoration Textile sur Mesure
+          <h2 className="text-4xl md:text-5xl font-italiana font-bold text-stone-800 mb-6 leading-tight">
+            Textile sur Mesure
           </h2>
           
           <div className="text-md text-stone-700 mb-8 leading-relaxed force-playwrite bg-white/60 backdrop-blur-sm p-6 rounded-lg">
