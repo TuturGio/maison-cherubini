@@ -39,7 +39,42 @@ export default function Header({ activeCategory, setActiveCategory, categories }
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="hidden md:flex flex-col items-center py-6">
+          <div className="flex items-center space-x-3 mb-6">
+            <Scissors className="w-8 h-8 text-amber-700" />
+            <div>
+              <h1 className="text-2xl font-italiana font-bold text-stone-800">Maison Cherubini</h1>
+              <p className="text-xs text-stone-600 text-center">Décoration sur mesure</p>
+            </div>
+          </div>
+
+          <div className="relative w-full flex justify-center">
+            <nav className="flex items-center space-x-8">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => scrollToCategory(category.id)}
+                  className={`text-sm font-medium transition-colors hover:text-amber-700 ${
+                    activeCategory === category.id ? 'text-amber-700' : 'text-stone-700'
+                  }`}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </nav>
+
+            <div className="absolute right-0 top-1/2 -translate-y-1/2">
+              <button
+                onClick={() => navigate('/contact')}
+                className="px-4 py-1.5 bg-amber-700 text-white rounded-lg text-sm font-medium hover:bg-amber-800 transition-colors whitespace-nowrap"
+              >
+                Prendre rendez-vous
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="md:hidden flex items-center justify-between h-20">
           <div className="flex items-center space-x-3">
             <Scissors className="w-8 h-8 text-amber-700" />
             <div>
@@ -48,31 +83,8 @@ export default function Header({ activeCategory, setActiveCategory, categories }
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8 flex-1 ml-16">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => scrollToCategory(category.id)}
-                className={`text-sm font-medium transition-colors hover:text-amber-700 ${
-                  activeCategory === category.id ? 'text-amber-700' : 'text-stone-700'
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </nav>
-
-          <div className="hidden md:flex items-center ml-4">
-            <button
-              onClick={() => navigate('/contact')}
-              className="px-4 py-1.5 bg-amber-700 text-white rounded-lg text-sm font-medium hover:bg-amber-800 transition-colors whitespace-nowrap"
-            >
-              Prendre rendez-vous
-            </button>
-          </div>
-
           <button
-            className="md:hidden text-stone-700"
+            className="text-stone-700"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
