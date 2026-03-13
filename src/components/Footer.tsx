@@ -51,7 +51,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <Scissors className="w-6 h-6 text-amber-500" />
-              <h3 className="text-xl font-italiana font-bold text-white">Atelier Couture</h3>
+              <h3 className="text-xl font-italiana font-bold text-white">Maison Cherubini</h3>
             </div>
             <p className="text-stone-400 leading-relaxed">
               Spécialiste de la décoration textile sur mesure depuis plus de 20 ans.
@@ -66,9 +66,9 @@ export default function Footer() {
                 <Phone className="w-5 h-5" />
                 <span>+33 1 23 45 67 89</span>
               </a>
-              <a href="mailto:contact@atelier-couture.fr" className="flex items-center gap-3 hover:text-amber-500 transition-colors">
+              <a href="mailto:bonjour@maison-cherubini.fr" className="flex items-center gap-3 hover:text-amber-500 transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>contact@atelier-couture.fr</span>
+                <span>bonjour@maison-cherubini.fr</span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
