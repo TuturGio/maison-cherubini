@@ -1,3 +1,5 @@
+import { Scissors } from 'lucide-react';
+
 interface Category {
   id: string;
   name: string;
@@ -14,9 +16,12 @@ export default function CategorySection({ category }: CategorySectionProps) {
   return (
     <section id={category.id} className="mb-24 scroll-mt-24">
       <div className="max-w-4xl mb-12">
-        <h3 className="text-4xl font-italiana font-bold text-stone-800 mb-4">
-          {category.title}
-        </h3>
+        <div className="flex items-center gap-4 mb-4">
+          <Scissors className="w-8 h-8 text-amber-700 flex-shrink-0" />
+          <h3 className="text-4xl font-italiana font-bold text-stone-800">
+            {category.title}
+          </h3>
+        </div>
         <p className="text-lg text-stone-600 leading-relaxed">
           {category.description}
         </p>

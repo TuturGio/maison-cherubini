@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Phone, Mail, MapPin, CheckCircle, Scissors } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { categories } from '../data/categories';
@@ -193,7 +193,10 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <Phone className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-2">Téléphone</h3>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Scissors className="w-4 h-4 text-amber-700" />
+                      <h3 className="font-semibold text-stone-800">Téléphone</h3>
+                    </div>
                     <p className="text-stone-600">+33 1 23 45 67 89</p>
                     <p className="text-sm text-stone-500 mt-1">Du lundi au samedi, 9h - 18h</p>
                   </div>
@@ -204,7 +207,10 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <Mail className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-2">Email</h3>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Scissors className="w-4 h-4 text-amber-700" />
+                      <h3 className="font-semibold text-stone-800">Email</h3>
+                    </div>
                     <p className="text-stone-600">contact@atelier-couture.fr</p>
                     <p className="text-sm text-stone-500 mt-1">Réponse sous 24h</p>
                   </div>
@@ -215,7 +221,10 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-2">Adresse</h3>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Scissors className="w-4 h-4 text-amber-700" />
+                      <h3 className="font-semibold text-stone-800">Adresse</h3>
+                    </div>
                     <p className="text-stone-600">123 Rue de la Couture</p>
                     <p className="text-stone-600">75001 Paris, France</p>
                   </div>

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail, Scissors } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
@@ -29,7 +29,10 @@ export default function NotreShowroom() {
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-1">Adresse</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Scissors className="w-4 h-4 text-amber-700" />
+                      <h3 className="font-semibold text-stone-800">Adresse</h3>
+                    </div>
                     <p className="text-stone-600">
                       123 Avenue de la Décoration<br />
                       06000 Nice<br />
@@ -41,7 +44,10 @@ export default function NotreShowroom() {
                 <div className="flex items-start space-x-4">
                   <Clock className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-1">Horaires d'ouverture</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Scissors className="w-4 h-4 text-amber-700" />
+                      <h3 className="font-semibold text-stone-800">Horaires d'ouverture</h3>
+                    </div>
                     <p className="text-stone-600">
                       Lundi - Vendredi : 9h00 - 18h00<br />
                       Samedi : 10h00 - 17h00<br />
@@ -55,7 +61,10 @@ export default function NotreShowroom() {
                 <div className="flex items-start space-x-4">
                   <Phone className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-1">Téléphone</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Scissors className="w-4 h-4 text-amber-700" />
+                      <h3 className="font-semibold text-stone-800">Téléphone</h3>
+                    </div>
                     <p className="text-stone-600">
                       +33 (0)4 93 00 00 00
                     </p>
@@ -65,7 +74,10 @@ export default function NotreShowroom() {
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-amber-700 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-stone-800 mb-1">Email</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Scissors className="w-4 h-4 text-amber-700" />
+                      <h3 className="font-semibold text-stone-800">Email</h3>
+                    </div>
                     <p className="text-stone-600">
                       contact@maisoncherubini.fr
                     </p>
