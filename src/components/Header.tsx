@@ -65,7 +65,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
             <Scissors className="w-12 h-12 text-amber-700" />
             <div>
               <h1 className="text-4xl font-italiana font-bold text-stone-800">Maison Cherubini</h1>
-              <p className="text-sm text-stone-600 text-center">Décoration sur mesure</p>
+              <p className="text-sm text-stone-600 text-center">Décoration sur-mesure</p>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
               >
                 <button
                   onClick={() => navigate('/')}
-                  className={`flex items-center space-x-1 text-sm font-medium uppercase tracking-wide transition-colors hover:text-amber-700 ${
+                  className={`flex items-center space-x-1 text-sm uppercase tracking-wide transition-colors hover:text-amber-700 ${
                     location.pathname === '/' ? 'text-amber-700' : 'text-stone-700'
                   }`}
                 >
@@ -92,7 +92,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
                       <button
                         key={category.id}
                         onClick={() => scrollToCategory(category.id)}
-                        className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 hover:text-amber-700 ${
+                        className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-amber-50 hover:text-amber-700 ${
                           activeCategory === category.id ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
                         }`}
                       >
@@ -105,7 +105,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
 
               <button
                 onClick={() => navigate('/notre-histoire')}
-                className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-amber-700 ${
+                className={`text-sm uppercase tracking-wide transition-colors hover:text-amber-700 ${
                   location.pathname === '/notre-histoire' ? 'text-amber-700' : 'text-stone-700'
                 }`}
               >
@@ -114,7 +114,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
 
               <button
                 onClick={() => navigate('/notre-showroom')}
-                className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-amber-700 ${
+                className={`text-sm uppercase tracking-wide transition-colors hover:text-amber-700 ${
                   location.pathname === '/notre-showroom' ? 'text-amber-700' : 'text-stone-700'
                 }`}
               >
@@ -123,7 +123,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
 
               <button
                 onClick={() => navigate('/contact')}
-                className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-amber-700 ${
+                className={`text-sm uppercase tracking-wide transition-colors hover:text-amber-700 ${
                   location.pathname === '/contact' ? 'text-amber-700' : 'text-stone-700'
                 }`}
               >
@@ -153,7 +153,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
             <Scissors className="w-8 h-8 text-amber-700" />
             <div>
               <h1 className="text-2xl font-italiana font-bold text-stone-800">Maison Cherubini</h1>
-              <p className="text-xs text-stone-600">Décoration sur mesure</p>
+              <p className="text-xs text-stone-600">Décoration sur-mesure</p>
             </div>
           </div>
 
@@ -170,7 +170,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
             <div>
               <button
                 onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
-                className="flex items-center justify-between w-full text-left px-4 py-2 text-sm font-medium text-stone-700 hover:bg-amber-50 rounded"
+                className="flex items-center justify-between w-full text-left px-4 py-2 text-sm text-stone-700 hover:bg-amber-50 rounded"
               >
                 <span>Nos réalisations</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileSubmenuOpen ? 'rotate-180' : ''}`} />
@@ -182,7 +182,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
                     <button
                       key={category.id}
                       onClick={() => scrollToCategory(category.id)}
-                      className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
+                      className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-amber-50 rounded ${
                         activeCategory === category.id ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
                       }`}
                     >
@@ -198,7 +198,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
                 navigate('/notre-histoire');
                 setMobileMenuOpen(false);
               }}
-              className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
+              className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-amber-50 rounded ${
                 location.pathname === '/notre-histoire' ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
               }`}
             >
@@ -210,7 +210,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
                 navigate('/notre-showroom');
                 setMobileMenuOpen(false);
               }}
-              className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
+              className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-amber-50 rounded ${
                 location.pathname === '/notre-showroom' ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
               }`}
             >
@@ -222,7 +222,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
                 navigate('/contact');
                 setMobileMenuOpen(false);
               }}
-              className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors hover:bg-amber-50 rounded ${
+              className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-amber-50 rounded ${
                 location.pathname === '/contact' ? 'text-amber-700 bg-amber-50' : 'text-stone-700'
               }`}
             >

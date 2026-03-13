@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <div className="relative min-h-[500px] md:h-[500px] bg-gradient-to-br from-amber-50 to-stone-100 overflow-hidden pb-8 md:pb-0">
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-40"
         style={{
           backgroundImage: 'url(home.jpg)',
           backgroundSize: 'cover',
