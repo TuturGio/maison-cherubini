@@ -56,21 +56,21 @@ export default function Header({ activeCategory, setActiveCategory, categories =
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="hidden md:flex flex-col items-center py-6">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="hidden md:flex flex-col items-center py-8">
           <div
-            className="flex items-center space-x-3 mb-6 cursor-pointer"
+            className="flex items-center space-x-4 mb-8 cursor-pointer"
             onClick={() => navigate('/')}
           >
-            <Scissors className="w-8 h-8 text-amber-700" />
+            <Scissors className="w-12 h-12 text-amber-700" />
             <div>
-              <h1 className="text-2xl font-italiana font-bold text-stone-800">Maison Cherubini</h1>
-              <p className="text-xs text-stone-600 text-center">Décoration sur mesure</p>
+              <h1 className="text-4xl font-italiana font-bold text-stone-800">Maison Cherubini</h1>
+              <p className="text-sm text-stone-600 text-center">Décoration sur mesure</p>
             </div>
           </div>
 
           <div className="relative w-full flex justify-center">
-            <nav className="flex items-center space-x-8">
+            <nav className="flex items-center space-x-12">
               <div
                 className="relative"
                 onMouseEnter={() => setSubmenuOpen(true)}
@@ -78,7 +78,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
               >
                 <button
                   onClick={() => navigate('/')}
-                  className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-amber-700 ${
+                  className={`flex items-center space-x-1 text-sm font-medium uppercase tracking-wide transition-colors hover:text-amber-700 ${
                     location.pathname === '/' ? 'text-amber-700' : 'text-stone-700'
                   }`}
                 >
@@ -105,7 +105,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
 
               <button
                 onClick={() => navigate('/notre-histoire')}
-                className={`text-sm font-medium transition-colors hover:text-amber-700 ${
+                className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-amber-700 ${
                   location.pathname === '/notre-histoire' ? 'text-amber-700' : 'text-stone-700'
                 }`}
               >
@@ -114,7 +114,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
 
               <button
                 onClick={() => navigate('/notre-showroom')}
-                className={`text-sm font-medium transition-colors hover:text-amber-700 ${
+                className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-amber-700 ${
                   location.pathname === '/notre-showroom' ? 'text-amber-700' : 'text-stone-700'
                 }`}
               >
@@ -123,7 +123,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
 
               <button
                 onClick={() => navigate('/contact')}
-                className={`text-sm font-medium transition-colors hover:text-amber-700 ${
+                className={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-amber-700 ${
                   location.pathname === '/contact' ? 'text-amber-700' : 'text-stone-700'
                 }`}
               >
@@ -134,7 +134,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
             <div className="absolute right-0 top-1/2 -translate-y-1/2">
               <button
                 onClick={() => navigate('/contact')}
-                className="px-4 py-1.5 bg-amber-700 text-white rounded-lg text-sm font-medium hover:bg-amber-800 transition-colors whitespace-nowrap"
+                className="px-6 py-2 bg-amber-700 text-white rounded-lg text-sm font-medium hover:bg-amber-800 transition-colors whitespace-nowrap"
               >
                 Prendre rendez-vous
               </button>
