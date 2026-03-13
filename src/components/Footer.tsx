@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-stone-700 mt-8 pt-8 text-center text-stone-500">
-          <p>&copy; {new Date().getFullYear()} Atelier Couture. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} Maison Cherubini. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
