@@ -87,7 +87,7 @@ export default function Header({ activeCategory, setActiveCategory, categories =
                 </button>
 
                 {submenuOpen && (
-                  <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[200px] border border-stone-100">
+                  <div className="absolute top-full left-0 mt-0 bg-white shadow-lg rounded-lg py-2 min-w-[200px] border border-stone-100">
                     {categories.map((category) => (
                       <button
                         key={category.id}
