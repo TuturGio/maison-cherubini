@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CategorySection from './components/CategorySection';
+import CategoryCarousel from './components/CategoryCarousel';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Contact from './pages/Contact';
@@ -21,6 +22,8 @@ function Home() {
         categories={categories}
       />
       <Hero />
+
+      <CategoryCarousel categories={categories} />
 
       <main className="container mx-auto px-4 py-16">
         {categories.map((category) => (
