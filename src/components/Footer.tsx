@@ -2,41 +2,42 @@ import { Phone, Mail, MapPin, Scissors, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-stone-800 text-stone-300">
-      <div className="container mx-auto px-4 py-12">
-        {/* Instagram Feed Section */}
-        <div className="mb-12">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Instagram className="w-6 h-6 text-amber-500" />
-            <h3 className="text-2xl font-italiana font-bold text-white">
-              Suivez-nous sur Instagram
-            </h3>
-          </div>
-          <div className="text-center mb-6">
-            <a
-              href="https://www.instagram.com/maison_cherubini"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-amber-500 hover:text-amber-400 transition-colors text-lg font-semibold"
-            >
+    <footer>
+      {/* Instagram Feed Section with light background */}
+      <div className="bg-stone-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-italiana font-bold text-stone-800 mb-3">
               @maison_cherubini
-            </a>
+            </h3>
+            <p className="text-stone-600">Suivez-nous sur Instagram.</p>
           </div>
 
-          {/* Instagram Embed */}
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-stone-900/50 rounded-lg p-6 backdrop-blur-sm">
-              <iframe
-                src="https://www.instagram.com/maison_cherubini/embed"
-                className="w-full h-[500px] border-0 rounded-lg"
-                scrolling="no"
-                title="Instagram Feed"
-              />
+          {/* Instagram Grid Preview */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[1, 2, 3, 4, 5, 6].map((index) => (
+                <a
+                  key={index}
+                  href="https://www.instagram.com/maison_cherubini"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="aspect-square bg-stone-200 rounded-lg overflow-hidden hover:opacity-80 transition-opacity group relative"
+                >
+                  <div className="absolute inset-0 flex items-center justify-center bg-stone-800/0 group-hover:bg-stone-800/10 transition-colors">
+                    <Instagram className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Footer Section with dark background */}
+      <div className="bg-stone-800 text-stone-300">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <Scissors className="w-6 h-6 text-amber-500" />
@@ -76,8 +77,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-stone-700 mt-8 pt-8 text-center text-stone-500">
-          <p>&copy; {new Date().getFullYear()} Maison Cherubini. Tous droits réservés.</p>
+          <div className="border-t border-stone-700 mt-8 pt-8 text-center text-stone-500">
+            <p>&copy; {new Date().getFullYear()} Maison Cherubini. Tous droits réservés.</p>
+          </div>
         </div>
       </div>
     </footer>
