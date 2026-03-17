@@ -11,15 +11,24 @@ export default function Footer() {
               @maison_cherubini
             </h3>
             <p className="text-stone-600 mb-6">Suivez-nous sur Instagram.</p>
-            <a
-              href="https://www.instagram.com/maison_cherubini"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-stone-800 hover:bg-stone-700 text-white rounded-lg transition-colors"
-            >
-              <Instagram className="w-5 h-5" />
-              <span>Voir notre profil Instagram</span>
-            </a>
+          </div>
+
+          {/* Instagram Widget - SnapWidget */}
+          <div className="max-w-6xl mx-auto">
+            <iframe
+              src="https://snapwidget.com/embed/1075959"
+              className="snapwidget-widget w-full border-0"
+              allowTransparency={true}
+              frameBorder="0"
+              scrolling="no"
+              style={{
+                border: 'none',
+                overflow: 'hidden',
+                width: '100%',
+                height: '420px'
+              }}
+              title="Posts from Instagram"
+            />
           </div>
         </div>
       </div>
