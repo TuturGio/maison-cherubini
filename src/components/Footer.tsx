@@ -3,32 +3,23 @@ import { Phone, Mail, MapPin, Scissors, Instagram } from 'lucide-react';
 export default function Footer() {
   return (
     <footer>
-      {/* Instagram Feed Section with light background */}
-      <div className="bg-stone-50 py-16">
+      {/* Instagram Feed Section with white background */}
+      <div className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h3 className="text-3xl font-italiana font-bold text-stone-800 mb-3">
               @maison_cherubini
             </h3>
             <p className="text-stone-600 mb-6">Suivez-nous sur Instagram.</p>
-          </div>
-
-          {/* Instagram Widget - SnapWidget */}
-          <div className="max-w-6xl mx-auto">
-            <iframe
-              src="https://snapwidget.com/embed/1075959"
-              className="snapwidget-widget w-full border-0"
-              allowTransparency={true}
-              frameBorder="0"
-              scrolling="no"
-              style={{
-                border: 'none',
-                overflow: 'hidden',
-                width: '100%',
-                height: '420px'
-              }}
-              title="Posts from Instagram"
-            />
+            <a
+              href="https://www.instagram.com/maison_cherubini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-stone-800 hover:bg-stone-700 text-white rounded-lg transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+              <span>Voir notre profil Instagram</span>
+            </a>
           </div>
         </div>
       </div>
