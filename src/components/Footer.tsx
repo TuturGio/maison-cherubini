@@ -1,60 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Phone, Mail, MapPin, Scissors, Instagram } from 'lucide-react';
 
-interface InstagramPost {
-  id: string;
-  image: string;
-  link: string;
-  caption: string;
-}
-
 export default function Footer() {
-  const [instagramPosts, setInstagramPosts] = useState<InstagramPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    const fetchInstagramPosts = async () => {
-      try {
-        const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/instagram`;
-        const response = await fetch(apiUrl, {
-          headers: {
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          },
-        });
+    const script = document.createElement('script');
+    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.setAttribute('data-use-service-core', '');
+    script.defer = true;
+    document.body.appendChild(script);
 
-        if (response.ok) {
-          const data = await response.json();
-          if (data.posts && data.posts.length > 0) {
-            setInstagramPosts(data.posts);
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching Instagram posts:', error);
-      } finally {
-        setLoading(false);
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
       }
     };
-
-    fetchInstagramPosts();
   }, []);
-
-  const fallbackImages = [
-    'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1248583/pexels-photo-1248583.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1350769/pexels-photo-1350769.jpeg?auto=compress&cs=tinysrgb&w=800',
-  ];
-
-  const displayPosts = instagramPosts.length > 0 ? instagramPosts : fallbackImages.map((img, i) => ({
-    id: `fallback-${i}`,
-    image: img,
-    link: 'https://www.instagram.com/maison_cherubini',
-    caption: ''
-  }));
 
   return (
     <footer>
@@ -76,31 +36,19 @@ export default function Footer() {
             </a>
           </div>
 
-          {loading ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className="aspect-square bg-stone-200 rounded-lg animate-pulse" />
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {displayPosts.slice(0, 8).map((post) => (
-                <a
-                  key={post.id}
-                  href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="aspect-square overflow-hidden rounded-lg group cursor-pointer"
-                >
-                  <img
-                    src={post.image}
-                    alt={post.caption || 'Instagram post'}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                </a>
-              ))}
-            </div>
-          )}
+          <div className="elfsight-app-d11dfb73-d99e-449a-a35b-c006ca0e0145" data-elfsight-app-lazy></div>
+
+          <div className="text-center mt-8">
+            <a
+              href="https://www.instagram.com/maison_cherubini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              <Instagram className="w-5 h-5" />
+              Voir plus sur Instagram
+            </a>
+          </div>
         </div>
       </div>
 
