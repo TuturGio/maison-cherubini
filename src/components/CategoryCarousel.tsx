@@ -28,17 +28,16 @@ export default function CategoryCarousel({ categories }: CategoryCarouselProps) 
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
-  const scrollToCategory = (categoryId: string) => {
-    navigate('/');
-    setTimeout(() => {
-      const element = document.getElementById(categoryId);
-      if (element) {
-        const offset = 100;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - offset;
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-      }
-    }, 100);
+  const navigateToCategory = (categoryId: string) => {
+    const routeMap: { [key: string]: string } = {
+      'rideaux': '/rideaux',
+      'voilages': '/voilages',
+      'stores': '/stores',
+      'yachting': '/yachting',
+      'banquettes': '/banquettes',
+      'echantillons': '/echantillons',
+    };
+    navigate(routeMap[categoryId] || '/');
   };
 
   return (
@@ -65,7 +64,7 @@ export default function CategoryCarousel({ categories }: CategoryCarouselProps) 
                   key={category.id}
                   className="flex-shrink-0 group cursor-pointer"
                   style={{ width: `calc(${100 / itemsPerView}% - ${(itemsPerView - 1) * 24 / itemsPerView}px)` }}
-                  onClick={() => scrollToCategory(category.id)}
+                  onClick={() => navigateToCategory(category.id)}
                 >
                   <div className="relative aspect-[4/5] overflow-hidden rounded-lg border-2 border-stone-200">
                     <img
