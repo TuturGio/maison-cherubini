@@ -1,13 +1,21 @@
 import { Phone, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Hero() {
+interface HeroProps {
+  showHeroSection?: boolean;
+}
+
+export default function Hero({ showHeroSection = false }: HeroProps) {
   const navigate = useNavigate();
 
-  const handwrittenStyle = { 
+  const handwrittenStyle = {
   fontFamily: "'Playwrite NL', cursive",
   lineHeight: '1.8'
 };
+
+  if (!showHeroSection) {
+    return null;
+  }
 
   return (
     <div className="relative min-h-[500px] md:h-[500px] bg-gradient-to-br from-amber-50 to-stone-100 overflow-hidden pb-8 md:pb-0">

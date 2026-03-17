@@ -27,7 +27,7 @@ function Home() {
         setActiveCategory={setActiveCategory}
         categories={categories}
       />
-      <Hero />
+      <Hero showHeroSection={true} />
 
       <CategoryCarousel categories={categories} />
 
