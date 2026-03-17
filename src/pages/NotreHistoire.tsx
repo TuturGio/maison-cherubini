@@ -2,13 +2,14 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import { categories } from '../data/categories';
 
 export default function NotreHistoire() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-stone-50">
-      <Header />
+      <Header categories={categories} />
 
       <main className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">

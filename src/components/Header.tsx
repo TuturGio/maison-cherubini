@@ -24,7 +24,18 @@ export default function Header({ activeCategory, setActiveCategory, categories =
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
 
   const scrollToCategory = (categoryId: string) => {
-    if (location.pathname !== '/') {
+    const categoryPageMap: { [key: string]: string } = {
+      'rideaux': '/rideaux',
+      'voilages': '/voilages',
+      'stores': '/stores',
+      'yachting': '/yachting',
+      'banquettes': '/banquettes',
+      'echantillons': '/echantillons',
+    };
+
+    if (categoryPageMap[categoryId]) {
+      navigate(categoryPageMap[categoryId]);
+    } else if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
         scrollToCategoryOnPage(categoryId);
