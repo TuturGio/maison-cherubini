@@ -32,17 +32,6 @@ export default function Footer() {
                 scrolling="no"
                 title="Instagram Feed"
               />
-              <div className="text-center mt-4">
-                <a
-                  href="https://www.instagram.com/maison_cherubini"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                >
-                  <Instagram className="w-5 h-5" />
-                  Voir plus sur Instagram
-                </a>
-              </div>
             </div>
           </div>
         </div>
