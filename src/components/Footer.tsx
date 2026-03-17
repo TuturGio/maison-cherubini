@@ -17,13 +17,13 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-stone-800 text-stone-300">
-      <div className="container mx-auto px-4 py-12">
-        {/* Instagram Feed Section */}
-        <div className="mb-12">
+    <footer>
+      {/* Instagram Feed Section with white background */}
+      <div className="bg-white py-12">
+        <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Instagram className="w-6 h-6 text-amber-500" />
-            <h3 className="text-2xl font-italiana font-bold text-white">
+            <h3 className="text-2xl font-italiana font-bold text-stone-800">
               Suivez-nous sur Instagram
             </h3>
           </div>
@@ -32,7 +32,7 @@ export default function Footer() {
               href="https://www.instagram.com/maison_cherubini"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-500 hover:text-amber-400 transition-colors text-lg font-semibold"
+              className="text-amber-600 hover:text-amber-700 transition-colors text-lg font-semibold"
             >
               @maison_cherubini
             </a>
@@ -40,29 +40,20 @@ export default function Footer() {
 
           {/* Instagram Embed */}
           <div className="max-w-5xl mx-auto">
-            <div className="bg-white rounded-lg p-6">
-              <iframe
-                src="https://www.instagram.com/maison_cherubini/embed"
-                className="w-full h-[500px] border-0 rounded-lg"
-                scrolling="no"
-                title="Instagram Feed"
-              />
-              <div className="text-center mt-4">
-                <a
-                  href="https://www.instagram.com/maison_cherubini"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                >
-                  <Instagram className="w-5 h-5" />
-                  Voir plus sur Instagram
-                </a>
-              </div>
-            </div>
+            <iframe
+              src="https://www.instagram.com/maison_cherubini/embed"
+              className="w-full h-[500px] border-0 rounded-lg"
+              scrolling="no"
+              title="Instagram Feed"
+            />
           </div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Footer Section with dark background */}
+      <div className="bg-stone-800 text-stone-300">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <Scissors className="w-6 h-6 text-amber-500" />
@@ -102,8 +93,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-stone-700 mt-8 pt-8 text-center text-stone-500">
-          <p>&copy; {new Date().getFullYear()} Maison Cherubini. Tous droits réservés.</p>
+          <div className="border-t border-stone-700 mt-8 pt-8 text-center text-stone-500">
+            <p>&copy; {new Date().getFullYear()} Maison Cherubini. Tous droits réservés.</p>
+          </div>
         </div>
       </div>
     </footer>
