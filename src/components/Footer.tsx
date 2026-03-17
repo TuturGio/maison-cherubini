@@ -6,30 +6,20 @@ export default function Footer() {
       {/* Instagram Feed Section with light background */}
       <div className="bg-stone-50 py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <h3 className="text-3xl font-italiana font-bold text-stone-800 mb-3">
               @maison_cherubini
             </h3>
-            <p className="text-stone-600">Suivez-nous sur Instagram.</p>
-          </div>
-
-          {/* Instagram Grid Preview */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {[1, 2, 3, 4, 5, 6].map((index) => (
-                <a
-                  key={index}
-                  href="https://www.instagram.com/maison_cherubini"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="aspect-square bg-stone-200 rounded-lg overflow-hidden hover:opacity-80 transition-opacity group relative"
-                >
-                  <div className="absolute inset-0 flex items-center justify-center bg-stone-800/0 group-hover:bg-stone-800/10 transition-colors">
-                    <Instagram className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                </a>
-              ))}
-            </div>
+            <p className="text-stone-600 mb-6">Suivez-nous sur Instagram.</p>
+            <a
+              href="https://www.instagram.com/maison_cherubini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-stone-800 hover:bg-stone-700 text-white rounded-lg transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+              <span>Voir notre profil Instagram</span>
+            </a>
           </div>
         </div>
       </div>
