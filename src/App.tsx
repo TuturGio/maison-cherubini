@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CategoryCarousel from './components/CategoryCarousel';
@@ -47,8 +47,8 @@ function Home() {
         </div>
 
         <div className="px-4 pb-8 space-y-4">
-          <a
-            href="/notre-histoire"
+          <Link
+            to="/notre-histoire"
             className="block rounded-2xl overflow-hidden shadow-lg"
           >
             <div
@@ -62,9 +62,9 @@ function Home() {
                 </h3>
               </div>
             </div>
-          </a>
-          <a
-            href="/notre-showroom"
+          </Link>
+          <Link
+            to="/notre-showroom"
             className="block rounded-2xl overflow-hidden shadow-lg"
           >
             <div
@@ -78,7 +78,7 @@ function Home() {
                 </h3>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
 
