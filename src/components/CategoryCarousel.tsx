@@ -16,9 +16,16 @@ interface CategoryCarouselProps {
 
 export default function CategoryCarousel({ categories }: CategoryCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeFilter, setActiveFilter] = useState<string>('rideaux');
   const navigate = useNavigate();
   const itemsPerView = 3;
   const maxIndex = Math.max(0, categories.length - itemsPerView);
+
+  const mainCategories = categories.filter(cat =>
+    ['rideaux', 'voilages', 'stores', 'banquettes'].includes(cat.id)
+  );
+
+  const filteredCategory = mainCategories.find(cat => cat.id === activeFilter);
 
   const next = () => {
     setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
@@ -41,11 +48,83 @@ export default function CategoryCarousel({ categories }: CategoryCarouselProps) 
   };
 
   return (
-    <div className="w-full py-20 bg-stone-50">
-      <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="text-4xl font-italiana text-center text-stone-800 mb-16">Nos Réalisations</h2>
+    <div className="w-full py-8 md:py-20 bg-stone-50">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <h2 className="text-2xl md:text-4xl font-italiana text-left md:text-center text-stone-800 mb-4 md:mb-16">Nos Réalisations</h2>
 
-        <div className="relative">
+        {/* Mobile Filter Tabs */}
+        <div className="md:hidden mb-6 flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setActiveFilter('rideaux')}
+            className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
+              activeFilter === 'rideaux'
+                ? 'bg-amber-700 text-white'
+                : 'bg-white text-stone-700 border border-stone-300'
+            }`}
+          >
+            Rideaux
+          </button>
+          <button
+            onClick={() => setActiveFilter('voilages')}
+            className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
+              activeFilter === 'voilages'
+                ? 'bg-amber-700 text-white'
+                : 'bg-white text-stone-700 border border-stone-300'
+            }`}
+          >
+            Voilages
+          </button>
+          <button
+            onClick={() => setActiveFilter('stores')}
+            className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
+              activeFilter === 'stores'
+                ? 'bg-amber-700 text-white'
+                : 'bg-white text-stone-700 border border-stone-300'
+            }`}
+          >
+            Store bateau
+          </button>
+        </div>
+
+        {/* Mobile Single Card View */}
+        {filteredCategory && (
+          <div className="md:hidden mb-6">
+            <div
+              className="group cursor-pointer"
+              onClick={() => navigateToCategory(filteredCategory.id)}
+            >
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src={filteredCategory.images[0]}
+                  alt={filteredCategory.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <h3 className="text-white text-2xl font-italiana uppercase tracking-wide">
+                    {filteredCategory.name}
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center mt-4 gap-2">
+              {mainCategories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveFilter(cat.id)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    cat.id === activeFilter ? 'bg-amber-700 w-8' : 'bg-stone-300'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Desktop Carousel View */}
+        <div className="hidden md:block relative">
           <button
             onClick={prev}
             disabled={currentIndex === 0}
@@ -91,18 +170,18 @@ export default function CategoryCarousel({ categories }: CategoryCarouselProps) 
           >
             <ChevronRight className="w-6 h-6" />
           </button>
-        </div>
 
-        <div className="flex justify-center mt-8 gap-2">
-          {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                idx === currentIndex ? 'bg-amber-700 w-8' : 'bg-stone-300'
-              }`}
-            />
-          ))}
+          <div className="flex justify-center mt-8 gap-2">
+            {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  idx === currentIndex ? 'bg-amber-700 w-8' : 'bg-stone-300'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
