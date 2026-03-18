@@ -21,11 +21,7 @@ export default function CategoryCarousel({ categories }: CategoryCarouselProps) 
   const itemsPerView = 3;
   const maxIndex = Math.max(0, categories.length - itemsPerView);
 
-  const mainCategories = categories.filter(cat =>
-    ['rideaux', 'voilages', 'stores', 'banquettes'].includes(cat.id)
-  );
-
-  const filteredCategory = mainCategories.find(cat => cat.id === activeFilter);
+  const filteredCategory = categories.find(cat => cat.id === activeFilter);
 
   const next = () => {
     setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
@@ -54,36 +50,19 @@ export default function CategoryCarousel({ categories }: CategoryCarouselProps) 
 
         {/* Mobile Filter Tabs */}
         <div className="md:hidden mb-6 flex gap-2 overflow-x-auto pb-2">
-          <button
-            onClick={() => setActiveFilter('rideaux')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
-              activeFilter === 'rideaux'
-                ? 'bg-amber-700 text-white'
-                : 'bg-white text-stone-700 border border-stone-300'
-            }`}
-          >
-            Rideaux
-          </button>
-          <button
-            onClick={() => setActiveFilter('voilages')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
-              activeFilter === 'voilages'
-                ? 'bg-amber-700 text-white'
-                : 'bg-white text-stone-700 border border-stone-300'
-            }`}
-          >
-            Voilages
-          </button>
-          <button
-            onClick={() => setActiveFilter('stores')}
-            className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
-              activeFilter === 'stores'
-                ? 'bg-amber-700 text-white'
-                : 'bg-white text-stone-700 border border-stone-300'
-            }`}
-          >
-            Store bateau
-          </button>
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveFilter(cat.id)}
+              className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
+                activeFilter === cat.id
+                  ? 'bg-amber-700 text-white'
+                  : 'bg-white text-stone-700 border border-stone-300'
+              }`}
+            >
+              {cat.name}
+            </button>
+          ))}
         </div>
 
         {/* Mobile Single Card View */}
@@ -110,7 +89,7 @@ export default function CategoryCarousel({ categories }: CategoryCarouselProps) 
 
             {/* Dots Indicator */}
             <div className="flex justify-center mt-4 gap-2">
-              {mainCategories.map((cat) => (
+              {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveFilter(cat.id)}

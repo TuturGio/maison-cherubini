@@ -51,20 +51,32 @@ function Home() {
             href="/notre-histoire"
             className="block rounded-2xl overflow-hidden shadow-lg"
           >
-            <div className="h-48 bg-gradient-to-br from-stone-600 to-stone-700 flex items-center justify-center">
-              <h3 className="text-2xl font-italiana font-bold text-white uppercase">
-                Notre Histoire
-              </h3>
+            <div
+              className="h-48 bg-cover bg-center relative"
+              style={{ backgroundImage: 'url(https://images.pexels.com/photos/3738088/pexels-photo-3738088.jpeg)' }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-800/80 to-stone-600/60" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="text-2xl font-italiana font-bold text-white uppercase">
+                  Notre Histoire
+                </h3>
+              </div>
             </div>
           </a>
           <a
             href="/notre-showroom"
             className="block rounded-2xl overflow-hidden shadow-lg"
           >
-            <div className="h-48 bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center">
-              <h3 className="text-2xl font-italiana font-bold text-white uppercase">
-                Notre Showroom
-              </h3>
+            <div
+              className="h-48 bg-cover bg-center relative"
+              style={{ backgroundImage: 'url(https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg)' }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-800/80 to-slate-600/60" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h3 className="text-2xl font-italiana font-bold text-white uppercase">
+                  Notre Showroom
+                </h3>
+              </div>
             </div>
           </a>
         </div>
